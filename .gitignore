@@ -33,3 +33,6 @@ yarn-error.log*
 /playwright/.cache/
 
 /.npm-only-allow
+
+# python
+api/__pycache__
