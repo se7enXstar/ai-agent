@@ -1,7 +1,8 @@
 import { Metadata } from "next"
-import { Button } from "components/Button/Button"
 import { LP_GRID_ITEMS } from "lp-items"
 import Link from "next/link"
+import { Button } from '@radix-ui/themes'
+
 
 export const metadata: Metadata = {
   title: "Next.js Enterprise Boilerplate",
@@ -34,15 +35,11 @@ export default function Web() {
               Experience rapid UI development, AI-powered code reviews, and an extensive suite of tools for a smooth and
               enjoyable development process.
             </p>
-            <Button href="https://github.com/Blazity/next-enterprise" className="mr-3">
-              Get started
-            </Button>
-            <Button
+            <Link
               href="/example"
-              intent="secondary"
             >
-              Example route
-            </Button>
+              <Button variant="outline">Example route</Button>
+            </Link>
           </div>
         </div>
       </section>
