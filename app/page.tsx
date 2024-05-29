@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import { Button } from "components/Button/Button"
 import { LP_GRID_ITEMS } from "lp-items"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Next.js Enterprise Boilerplate",
@@ -37,10 +38,10 @@ export default function Web() {
               Get started
             </Button>
             <Button
-              href="https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-enterprise"
+              href="/example"
               intent="secondary"
             >
-              Deploy Now
+              Example route
             </Button>
           </div>
         </div>
