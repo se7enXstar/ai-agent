@@ -3,25 +3,25 @@ const nextConfig = {
   rewrites: async () => {
     return [
       {
-        source: "/websev/:path*",
+        source: "/llmsev/:path*",
         destination:
           process.env.NODE_ENV === "development"
-            ? "http://127.0.0.1:1234/websev/:path*"
-            : "/websev/",
+            ? "http://127.0.0.1:8000/llmsev/:path*"
+            : "/llmsev/",
       },
       {
         source: "/docs",
         destination:
           process.env.NODE_ENV === "development"
-            ? "http://127.0.0.1:1234/docs"
-            : "/websev/docs",
+            ? "http://127.0.0.1:8000/docs"
+            : "/llmsev/docs",
       },
       {
         source: "/openapi.json",
         destination:
           process.env.NODE_ENV === "development"
-            ? "http://127.0.0.1:1234/openapi.json"
-            : "/websev/openapi.json",
+            ? "http://127.0.0.1:8000/openapi.json"
+            : "/llmsev/openapi.json",
       },
     ];
   },

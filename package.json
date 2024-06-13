@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "fastapi-dev": "pip3 install -r ./websev/requirements.txt && python3 -m uvicorn websev.index:app --reload --port 1234",
     "serve-langchain": "cd llmsev && langchain serve",
     "next-dev": "cross-env FORCE_COLOR=1 next dev",
-    "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev\" \"npm run serve-langchain\"",
+    "dev": "concurrently \"npm run next-dev\" \"npm run serve-langchain\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

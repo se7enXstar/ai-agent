@@ -11,6 +11,10 @@ async def redirect_root_to_docs():
     return RedirectResponse("/docs")
 
 
+@app.get("/llmsev/python")
+def hello_world():
+    return {"message": "Hello World"}
+
 # Edit this to add the chain you want to add
 add_routes(app, neo4j_advanced_chain, path="/neo4j-advanced-rag")
 
