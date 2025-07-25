@@ -1,63 +1,53 @@
 import { Metadata } from "next"
-import { LP_GRID_ITEMS } from "lp-items"
 import Link from "next/link"
 import { Button } from '@radix-ui/themes'
 
-
 export const metadata: Metadata = {
-  title: "Next.js Enterprise Boilerplate",
-  twitter: {
-    card: "summary_large_image",
-  },
-  openGraph: {
-    url: "https://next-enterprise.vercel.app/",
-    images: [
-      {
-        width: 1200,
-        height: 630,
-        url: "https://raw.githubusercontent.com/Blazity/next-enterprise/main/.github/assets/project-logo.png",
-      },
-    ],
-  },
+  title: "Social Dept - Accelerated Social Content",
+  description: "Accelerated social content for entertainment marketing",
 }
 
 export default function Web() {
   return (
-    <>
-      <section className="bg-white dark:bg-gray-900">
-        <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
-          <div className="mx-auto place-self-center">
-            <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
-              Next.js Enterprise Boilerplate
-            </h1>
-            <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              Jumpstart your enterprise project with our feature-packed, high-performance Next.js boilerplate!
-              Experience rapid UI development, AI-powered code reviews, and an extensive suite of tools for a smooth and
-              enjoyable development process.
-            </p>
-            <Link
-              href="/example"
-            >
-              <Button variant="outline">Example route</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className="bg-white dark:bg-gray-900">
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
-          <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
-            {LP_GRID_ITEMS.map((singleItem) => (
-              <div key={singleItem.title} className="flex flex-col items-center justify-center text-center">
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 p-1.5 text-blue-700 dark:bg-primary-900 lg:h-12 lg:w-12">
-                  {singleItem.icon}
+    <main className="min-h-screen bg-purple-950 flex flex-col">
+      {/* Main Content Area */}
+      <div className="flex-1 flex items-center justify-center px-6">
+        <div className="text-center max-w-4xl mx-auto">
+          {/* Main Headline */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-12 leading-tight">
+            <span className="text-white">Accelerated</span>{" "}
+            <span className="text-purple-300">social content</span>{" "}
+            <span className="text-white">for entertainment marketing</span>
+          </h1>
+
+          {/* Call-to-Action Boxes */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {/* Sign In Box */}
+            <div className="bg-purple-800 rounded-lg p-8 hover:bg-purple-700 transition-colors cursor-pointer">
+              <Link href="/signin" className="block">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xl font-bold text-white">Sign In →</h2>
                 </div>
-                <h3 className="mb-2 text-xl font-bold dark:text-white">{singleItem.title}</h3>
-                <p className="text-gray-500 dark:text-gray-400">{singleItem.description}</p>
-              </div>
-            ))}
+                <p className="text-purple-200 text-sm leading-relaxed">
+                  Sign in to access the content generation and PDF upload features.
+                </p>
+              </Link>
+            </div>
+
+            {/* Create Account Box */}
+            <div className="bg-purple-800 rounded-lg p-8 hover:bg-purple-700 transition-colors cursor-pointer">
+              <Link href="/signup" className="block">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xl font-bold text-white">Create Account →</h2>
+                </div>
+                <p className="text-purple-200 text-sm leading-relaxed">
+                  Create a new account to get started with content generation.
+                </p>
+              </Link>
+            </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </main>
   )
 }
