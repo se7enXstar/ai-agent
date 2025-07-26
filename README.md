@@ -1,73 +1,117 @@
-# This Boilerplate is extended by the Next.js Enterprise Boilerplate ("https://github.com/Blazity/next-enterprise"). I've added langchain server into this template.
+# AI Support Agent
 
-## 🎯 Getting Started
+A modern customer support application with AI-guided ticket creation, built with Next.js, TypeScript, TailwindCSS, and Langchain.
 
-To get started with this boilerplate, follow these steps:
+## 🚀 Features
 
-1. Fork & clone repository:
+- **AI-Guided Ticket Creation**: Interactive chat interface that guides users through ticket creation
+- **Smart Suggestions**: AI-powered suggestions for titles, categories, and descriptions
+- **Real-time Preview**: Dynamic ticket preview that updates as you chat
+- **Modern UI**: Beautiful interface built with ShadcnUI and TailwindCSS
+- **TypeScript**: Full type safety throughout the application
+- **Responsive Design**: Works perfectly on desktop and mobile devices
 
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 14 (App Router), TypeScript, TailwindCSS, ShadcnUI
+- **Backend**: Python, FastAPI, Langchain, OpenAI GPT-4
+- **Database**: PostgreSQL with Prisma ORM
+- **AI**: OpenAI GPT-4 for intelligent conversations
+
+## 📦 Installation
+
+1. **Clone the repository**
 ```bash
-## Don't forget to ⭐ star and fork it first :)
-git clone https://github.com/<your_username)/next-fastapi-langchain.git
+   git clone https://github.com/se7enXstar/ai-agent.git
+   cd ai-agent
 ```
 
-2. Install the dependencies:
-
+2. **Install dependencies**
 ```bash
-yarn install --frozen-lockfile
+   npm install
 ```
 
-3. Install the LangChain CLI:
-
+3. **Set up environment variables**
 ```bash
-yarn dev
-```
-4. Create a new LangChain project, e.g., neo4j-advanced-rag:
+   cp env.example .env.local
+   ```
+   Edit `.env.local` with your configuration:
+   ```env
+   NEXT_PUBLIC_APP_URL=http://localhost:3000
+   NEXT_PUBLIC_API_URL=http://localhost:8000
+   DATABASE_URL="postgresql://username:password@localhost:5432/ai_agent_db"
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
 
+4. **Start the development server**
 ```bash
-langchain app new {llmenv} --package neo4j-advanced-rag
+   npm run dev
+   ```
+
+## 🌐 Default URLs
+
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:8000
+- **API Documentation**: http://localhost:8000/docs
+- **AI Assistant**: http://localhost:3000/assistant
+
+## 📁 Project Structure
+
+```
+ai-agent/
+├── app/                    # Next.js App Router
+│   ├── assistant/         # AI Assistant interface
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Homepage
+├── components/            # React components
+│   ├── ui/               # ShadcnUI components
+│   ├── ChatInterface.tsx # Main chat component
+│   ├── TicketPreview.tsx # Ticket preview sidebar
+│   └── Header.tsx        # Header component
+├── backend/              # Python backend (to be implemented)
+├── prisma/              # Database schema
+└── styles/              # Global styles
 ```
 
-or add a package to an existing project, you can just run:
+## 🔧 Development
 
-```bash
-langchain app add neo4j-advanced-rag
-```
+### Available Scripts
 
-And add the following code to your server.py file under the {llmenv} folder:
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run test` - Run tests
 
-```bash
-from neo4j_advanced_rag import chain as neo4j_advanced_chain
+### Environment Variables
 
-add_routes(app, neo4j_advanced_chain, path="/neo4j-advanced-rag")
-```
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `NEXT_PUBLIC_APP_URL` | Frontend application URL | `http://localhost:3000` |
+| `NEXT_PUBLIC_API_URL` | Backend API URL | `http://localhost:8000` |
+| `DATABASE_URL` | PostgreSQL connection string | - |
+| `OPENAI_API_KEY` | OpenAI API key for AI features | - |
 
-And set environment variables
+## 🎯 Usage
 
-```bash
-export OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
-export NEO4J_URI=<YOUR_NEO4J_URI>
-export NEO4J_USERNAME=<YOUR_NEO4J_USERNAME>
-export NEO4J_PASSWORD=<YOUR_NEO4J_PASSWORD>
-```
+1. **Visit the homepage**: Navigate to http://localhost:3000
+2. **Access AI Assistant**: Click "AI Assistant" or go to http://localhost:3000/assistant
+3. **Create a ticket**: Follow the AI-guided conversation to create support tickets
+4. **View preview**: See real-time updates in the left sidebar
 
-5. Run the development server:
+## 🤝 Contributing
 
-```bash
-yarn dev
-```
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-6. Open [http://localhost:3000](http://localhost:3000) to see the web frontend.
+## 📄 License
 
-Open [http://localhost:8000](http://localhost:8000) to see the langchain server.
+This project is licensed under the MIT License.
 
-We can see all templates at http://127.0.0.1:8000/docs We can access the playground at http://127.0.0.1:8000/neo4j-advanced-rag/playground
+## 🔗 Links
 
-7. This project uses a git hook to enforce [conventional commits](https://github.com/qoomon/git-conventional-commits). To install the git hook, run the following command in the root directory of the project:
-
-```sh
-brew install pre-commit
-pre-commit install -t commit-msg
-```
-
-You can check detailed information in ("https://github.com/Blazity/next-enterprise")
+- **Repository**: https://github.com/se7enXstar/ai-agent
+- **Issues**: https://github.com/se7enXstar/ai-agent/issues

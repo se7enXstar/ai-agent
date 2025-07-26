@@ -39,3 +39,4 @@ yarn-error.log*
 
 # python
 api/__pycache__
+/generated/prisma

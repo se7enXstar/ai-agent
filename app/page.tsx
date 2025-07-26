@@ -18,21 +18,21 @@ export default function Web() {
             <span className="text-white">Accelerated</span>{" "}
             <span className="text-purple-300">social content</span>{" "}
             <span className="text-white">for entertainment marketing</span>
-          </h1>
+            </h1>
 
           {/* Call-to-Action Boxes */}
           <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            {/* Sign In Box */}
+                        {/* AI Assistant Box */}
             <div className="bg-purple-800 rounded-lg p-8 hover:bg-purple-700 transition-colors cursor-pointer">
-              <Link href="/signin" className="block">
+              <Link href="/assistant" className="block">
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl font-bold text-white">Sign In →</h2>
+                  <h2 className="text-xl font-bold text-white">AI Assistant →</h2>
                 </div>
                 <p className="text-purple-200 text-sm leading-relaxed">
-                  Sign in to access the content generation and PDF upload features.
+                  Create support tickets with AI-guided conversation and intelligent suggestions.
                 </p>
-              </Link>
-            </div>
+            </Link>
+          </div>
 
             {/* Create Account Box */}
             <div className="bg-purple-800 rounded-lg p-8 hover:bg-purple-700 transition-colors cursor-pointer">
@@ -44,7 +44,7 @@ export default function Web() {
                   Create a new account to get started with content generation.
                 </p>
               </Link>
-            </div>
+              </div>
           </div>
         </div>
       </div>
